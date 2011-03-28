@@ -1,0 +1,76 @@
+#header {
+ background-color: #DDDDDD;
+ #min-width: 200px;
+ #width: 200px;
+ #margin: 0 auto 0 10px;
+ #border: 1px solid black;
+}
+
+#title {
+  font-family: "Lucdia Grande",arial,sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  #width: 950px;
+  margin: 0 auto 0 100px;
+  padding: 10px 118px 0 10px;
+  position: relative;
+  background-color: inherit;
+  float: left;
+  #border: none;
+  border: 1px solid black;
+  border-style: solid solid none;
+  border-color: #CCCCCC;
+  -moz-border-radius: 5px 5px 0 0;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.7);
+  #color: #666666;
+}
+
+#description {
+  font-family: "Lucdia Grande",arial,sans-serif;
+  font-size: 14px;
+  font-style: italic;
+  #width: 950px;
+  margin: 0 auto 0 100px;
+  padding: 10px 300px 10px 10px;
+  position: relative;
+  background-color: inherit;
+  float: left;
+  clear: left;
+  #border: none;
+  border: 1px solid black;
+  border-style: none solid solid;
+  border-color: #CCCCCC;
+  -moz-border-radius: 0px 0px 5px 5px;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.7);
+  color: #666666;
+}
+
+#feed {
+  font-family: "Lucdia Grande",arial,sans-serif;
+  float: left;
+  clear: left;
+  margin: 10px auto 0 100px;
+  width: 500px;
+}
+
+#entry {
+  border-bottom: 1px solid #CCCCCC;
+  padding: 10px 0 10px 0;
+}
+
+#action {
+  background-color: #FFF6A9;
+}
+
+#entry-description {
+  margin: 0 0 0 20px;
+}
+
+#entry-participant {
+  margin: 0 0 0 20px;
+}
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
