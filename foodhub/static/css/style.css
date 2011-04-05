@@ -1,13 +1,21 @@
-#header {
+body {
+  font-family: "Lucdia Grande",arial,sans-serif;
+}
+
+#userbox {
+  float: right;
+  padding: 8px 5px 7px 10px;
+}
+
+#content {
  background-color: #DDDDDD;
- #min-width: 200px;
- #width: 200px;
- #margin: 0 auto 0 10px;
+ min-width: 800px;
+ width: 830px;
+ margin: 0 auto 0 10px;
  #border: 1px solid black;
 }
 
 #title {
-  font-family: "Lucdia Grande",arial,sans-serif;
   font-size: 40px;
   font-weight: bold;
   #width: 950px;
@@ -26,7 +34,6 @@
 }
 
 #description {
-  font-family: "Lucdia Grande",arial,sans-serif;
   font-size: 14px;
   font-style: italic;
   #width: 950px;
@@ -46,7 +53,6 @@
 }
 
 #feed {
-  font-family: "Lucdia Grande",arial,sans-serif;
   float: left;
   clear: left;
   margin: 10px auto 0 100px;
