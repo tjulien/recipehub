@@ -1,9 +1,5 @@
 from django.db import models
-
-class User(models.Model):
-    name = models.CharField(max_length=64)
-    email = models.CharField(max_length=64)
-    password = models.CharField(max_length=32)
+from django.contrib.auth.models import User
 
 class Follower(models.Model):
     follower = models.ForeignKey(User, related_name='follower')
