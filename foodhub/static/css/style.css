@@ -19,7 +19,7 @@ body {
   font-size: 40px;
   font-weight: bold;
   #width: 950px;
-  margin: 0 auto 0 100px;
+  #margin: 0 auto 0 100px;
   padding: 10px 145px 0 10px;
   position: relative;
   background-color: inherit;
@@ -37,7 +37,7 @@ body {
   font-size: 14px;
   font-style: italic;
   #width: 250px;
-  margin: 0 auto 0 100px;
+  #margin: 0 auto 0 100px;
   padding: 10px 286px 10px 10px;
   position: relative;
   background-color: inherit;

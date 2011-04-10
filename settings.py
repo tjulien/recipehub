@@ -119,6 +119,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'foodhub',
+    'simplegravatar',
     'django.contrib.admin',
     'django.contrib.admindocs',
 )
@@ -145,3 +146,5 @@ LOGGING = {
         },
     }
 }
+
+LOGIN_REDIRECT_URL='/recipehub'
