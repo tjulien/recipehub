@@ -10,34 +10,68 @@
 	{% if user.is_authenticated %}
 	  {% show_gravatar user.email 24 %}  <a href="{{user.username}}">{{user.username}}</a> |  <a href="{% url 'foodhub.views.logout_view' %}">logout</a>
 	{% else %}
-	  <a href="login.html">login</a> |  <a href="register.html">register</a>
+	  <a href="login.html">login</a> | <a href="register.html">register</a>
 	{% endif %}
       </div>
       <div id="title">recipe hub: social cooking</div>
       <div id="description">Follow recipes you love and the people who create them</div>
-      <div id="feed">
-	<div id="entry">
-	  <div id="entry-title"><a href="tjulien">Tim</a> <span id="action">created</span> recipe <a href="tjulien/steak+fajitas">steak fajitas</a></div>
-	  <div id="entry-description">tex-mex style with extra lime</div>
-	</div>
-        <div id="entry">
-	  <div id="entry-title"><a href="fberger">Felix</a> <span id="action">clipped</span> recipe <a href="mario+batali/baked+ziti">mario batali/baked ziti</a></div>
-	  <div id="entry-description">gooey mozerella with sweet italian sausage</div>
-	</div>
-	<div id="entry">
-	  <div id="entry-title"><a href="aroscoe">Anthony</a> <span id="action">started following </span><a href="mbatali">Mario Batali</a></div>
-	  <div id="entry-description">NYC restaurantauer with a passion for simple italian food</div>
-	</div>
-	<div id="entry">
-	  <div id="entry-title"><a href="jherskowitz">Jason</a> <span id="action">started following </span><a href="mercadito">Ruby's</a></div>
-	  <div id="entry-description">SOHO hole-in-the-wall serving fun Australian food</div>
-	</div>
-	<div id="entry">
-	  <div id="entry-title"><a href="fooksy">David</a> <span id="action">cooked </span><a href="fooksy/pizza">pizza</a></div>
-	  <div id="entry-participant"><a href="tjulien">Tim</a> <span id="action">ate</span> this. "Not as good as mine #planbetter"</div>
+      <div id="main">
+	<ul class="feed">
+	  <li class="entry">
+	    <div id="entry-title"><a href="tjulien">Tim</a> <span id="action">created</span> recipe <a href="tjulien/steak+fajitas">steak fajitas</a></div>
+	    <div id="entry-description">tex-mex style with extra lime</div>
+	  </li>
+          <li class="entry">
+	    <div id="entry-title"><a href="fberger">Felix</a> <span id="action">clipped</span> recipe <a href="mario+batali/baked+ziti">mario batali/baked ziti</a></div>
+	    <div id="entry-description">gooey mozerella with sweet italian sausage</div>
+	  </li>
+	  <li class="entry">
+	    <div id="entry-title"><a href="aroscoe">Anthony</a> <span id="action">started following </span><a href="mbatali">Mario Batali</a></div>
+	    <div id="entry-description">NYC restaurantauer with a passion for simple italian food</div>
+	  </li>
+	  <li class="entry">
+	    <div id="entry-title"><a href="jherskowitz">Jason</a> <span id="action">started following </span><a href="mercadito">Ruby's</a></div>
+	    <div id="entry-description">SOHO hole-in-the-wall serving fun Australian food</div>
+	  </li>
+	  <li class="entry">
+	    <div id="entry-title"><a href="fooksy">David</a> <span id="action">cooked </span><a href="fooksy/pizza">pizza</a></div>
+	    <div id="entry-participant"><a href="tjulien">Tim</a> <span id="action">ate</span> this. "Not as good as mine #planbetter"</div>
+	  </li>
+	</ul>
+	<div id="your-recipes">
+	  <ul class="recipe-list">
+	    <li class="recipes-header">
+	      Your Recipes (7)
+	    </li>
+	    <li class="recipes-header">
+	      <a class="new-recipe" href="create">New Recipe</a>
+	    </li>
+	  </ul>
+	  <ul class="recipe-list">
+	    <li class="recipe-entry">
+	      <a href="Tim's steak fajita's">Tim's steak fajitas</a>
+	    </li>
+	    <li class="recipe-entry">
+	      <a href="Mom's brownies">Mon's brownies</a>
+	    </li>
+	    <li class="recipe-entry">
+	      <a href="Grandma's ziti">Grandma's ziti</a>
+	    </li>
+	    <li class="recipe-entry">
+	      <a href="Fooksy's pizza">Fooksy's pizza</a>
+	    </li>
+	    <li class="recipe-entry">
+	      <a href="Roscoe's hot sauce">Roscoe's hot sauce</a>
+	    </li>
+	    <li class="recipe-entry">
+	      <a href="Mercadito's guscamole">Mercadito's guacamole</a>
+	    </li>
+	    <li class="recipe-entry">
+	      <a href="Mario Batali's lasagna">Mario Batali's lasagna</a>
+	    </li>
+	  </ul>
 	</div>
       </div>
-    </div>
 
 {% endblock %}
 

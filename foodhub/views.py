@@ -28,3 +28,6 @@ def register(request):
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect('/recipehub')
+
+def create(request):
+    return render_to_response('recipe.html', RequestContext(request))
