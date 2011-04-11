@@ -1,7 +1,5 @@
-* create account
 * create recipe
 * recipe view
 * feed view
 * user view
-* gravatar
 * twitter

@@ -8,7 +8,6 @@ body {
 }
 
 #content {
- background-color: #DDDDDD;
  min-width: 800px;
  width: 1000px;
  margin: 0 auto 0 10px;
@@ -22,7 +21,7 @@ body {
   #margin: 0 auto 0 100px;
   padding: 10px 145px 0 10px;
   position: relative;
-  background-color: inherit;
+  background-color: #DDDDDD;#inherit;
   float: left;
   #border: none;
   border: 1px solid black;
@@ -40,7 +39,7 @@ body {
   #margin: 0 auto 0 100px;
   padding: 10px 286px 10px 10px;
   position: relative;
-  background-color: inherit;
+  background-color: #DDDDDD;#inherit;
   float: left;
   clear: left;
   #border: none;

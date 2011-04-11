@@ -2,7 +2,21 @@
 
 {% block title %}new recipe{% endblock %}
 
+{% block scripts %} 
+
+<script type="text/javascript" src="http://www.appelsiini.net/download/jquery.jeditable.mini.js"></script>
+<script type="text/javascript">
+ $(document).ready(function() {
+     $('.edit').editable('http://www.example.com/save.php');
+ });
+</script>
+{% endblock %}
+
 {% block content %}
-
-
+<ul>
+{% for ingredient in ingredients %}
+  <li class='edit'>{{ ingredient.name }}</ul>
+{% endfor %}
+<div class="edit" id="div_1">click to add ingredient</div>
+</ul>
 {% endblock %}

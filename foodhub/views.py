@@ -3,8 +3,11 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django import forms
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response
 from foodhub.forms import AccountCreationForm
+from foodhub.models import *
+from datetime import *
 
 def index(request):
     return render_to_response('index.html', RequestContext(request))
@@ -29,5 +32,8 @@ def logout_view(request):
     logout(request)
     return HttpResponseRedirect('/recipehub')
 
+@login_required
 def create(request):
-    return render_to_response('recipe.html', RequestContext(request))
+    recipe = Recipe.objects.create(user = request.user, create_date = datetime.now())
+    return render_to_response('recipe.html', {'recipe': recipe, 
+                                              'ingredients': recipe.ingredient_set.values()}, RequestContext(request))
