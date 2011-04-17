@@ -1,3 +1,4 @@
+
 from django.conf.urls.defaults import patterns, include, url
 
 urlpatterns = patterns('',
@@ -5,6 +6,8 @@ urlpatterns = patterns('',
     url(r'^login', 'django.contrib.auth.views.login', {'template_name': 'login.html'}),
     url(r'^logout', 'foodhub.views.logout_view'),
     url(r'^create', 'foodhub.views.create'),
+    url(r'^recipe/(\d+)/ingredient', 'foodhub.views.ingredient'),
+    url(r'^recipe/(\d+)/$', 'foodhub.views.recipe'),
     url(r'^$', 'foodhub.views.index', name='index'),    
     # url(r'^recipehub/', include('recipehub.foo.urls')),
 )

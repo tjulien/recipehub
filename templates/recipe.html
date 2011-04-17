@@ -7,16 +7,35 @@
 <script type="text/javascript" src="http://www.appelsiini.net/download/jquery.jeditable.mini.js"></script>
 <script type="text/javascript">
  $(document).ready(function() {
-     $('.edit').editable('http://www.example.com/save.php');
+     $('.edit').editable('/recipehub/recipe/{{ recipe.id }}/ingredient', {
+        width: '30',
+        submitdata: {csrfmiddlewaretoken: "{{ token }}" }
+     });
+  
+     $('.add').editable('/recipehub/recipe/{{ recipe.id }}/ingredient', {
+        width: '30',
+        submitdata: {csrfmiddlewaretoken: "{{ token }}" },
+        callback : function(value, settings) {
+          $("#content ul").append('<li class="add" id="">click to add ingredient</li>');
+        }
+     });
+
+     $('.edit-name').editable('/recipehub/recipe/{{ recipe.id }}/', {
+        width: '30',
+        submitdata: {csrfmiddlewaretoken: "{{ token }}" }
+     });
+     
  });
 </script>
 {% endblock %}
 
 {% block content %}
+<div id="name" class="edit-name">{{ recipe_name }}</div>
 <ul>
 {% for ingredient in ingredients %}
-  <li class='edit'>{{ ingredient.name }}</ul>
+  <li class="edit" id="{{ ingredient.id }}">{{ ingredient.name }}</li>
 {% endfor %}
-<div class="edit" id="div_1">click to add ingredient</div>
+  <li class="add" id="">click to add ingredient</li>
+</ul>
 </ul>
 {% endblock %}

@@ -35,5 +35,40 @@ def logout_view(request):
 @login_required
 def create(request):
     recipe = Recipe.objects.create(user = request.user, create_date = datetime.now())
-    return render_to_response('recipe.html', {'recipe': recipe, 
-                                              'ingredients': recipe.ingredient_set.values()}, RequestContext(request))
+    recipe.save()
+    return render_to_response('recipe.html', {'recipe': recipe,
+                                              'recipe_name': 'Recipe name - click to edit', #recipe.name,
+                                              'ingredients': recipe.ingredient_set.values(),
+                                              'token': request.META['CSRF_COOKIE']}, RequestContext(request))
+@login_required
+def recipe(request, recipe_id):
+    recipe = Recipe.objects.get(pk = recipe_id)
+    if request.method == 'POST':
+        setattr(recipe, request.POST['id'], request.POST['value']) 
+        recipe.save()
+    if len(recipe.name.strip()) == 0:
+        recipe.name = 'Recipe name - click to edit'
+    return render_to_response('recipe.html', {'recipe': recipe,
+                                              'recipe_name': recipe.name,
+                                              'ingredients': recipe.ingredient_set.values(),
+                                              'token': request.META['CSRF_COOKIE']}, RequestContext(request))
+@login_required
+def ingredient(request, recipe_id):
+    if request.method == 'POST':
+        recipe = Recipe.objects.get(pk = recipe_id)
+        ingredient_id = request.POST['id']
+        if ingredient_id is not None:
+            ingredient_id = ingredient_id.strip()
+        if ingredient_id is not None and len(ingredient_id) > 0:
+            ingredient = Ingredient.objects.get(pk = ingredient_id)
+        else:
+            ingredient = Ingredient.objects.create(list_num = len(recipe.ingredient_set.values()),
+                                                   recipe = recipe)
+        ingredient.name = request.POST['value']
+        ingredient.save()
+        return HttpResponse(request.POST['value'])
+
+
+    #if request.method == 'POST':
+    #    setattr(recipe, fieldname, fieldvalue) 
+    #    my_instance.save() 
